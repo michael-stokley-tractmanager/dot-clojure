@@ -17,10 +17,6 @@
 
  ;; External dependencies
 
- ;; :deps {
- ;;   org.clojure/clojure {:mvn/version "1.10.1"}
- ;; }
-
  :deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}}
 
  ;; Aliases
@@ -50,7 +46,7 @@
              "--middleware"
              "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
 
-           :tract-manager/use-local-sources-during-development
+           :tract-manager/use-local-sources
            {:override-deps
             {tractsoft/authenticate     {:local/root "tract-manager/projects/authenticate"}
              tractsoft/authenticate-lib {:local/root "tract-manager/projects/authenticate-lib"}
