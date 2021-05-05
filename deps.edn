@@ -15,11 +15,6 @@
 
  ;; :paths ["src"]
 
- ;; External dependencies
-
- :deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}
-        djblue/portal               {:mvn/version "0.11.1"}}
-
  ;; Aliases
  ;;   resolve-deps aliases (-R) affect dependency resolution, options:
  ;;     :extra-deps - specifies extra deps to add to :deps
@@ -49,20 +44,25 @@
 
            :tract-manager/use-local-sources
            {:override-deps
-            {tractsoft/authenticate     {:local/root "~/tract-manager/projects/authenticate"}
-             tractsoft/authenticate-lib {:local/root "~/tract-manager/projects/authenticate-lib"}
-             tractsoft/beekeper         {:local/root "~/tract-manager/projects/beekeeper"}
-             tractsoft/communication    {:local/root "~/tract-manager/projects/communication"}
-             tractsoft/contract         {:local/root "~/tract-manager/projects/contract"}
-             tractsoft/customer-details {:local/root "~/tract-manager/projects/customer-details"}
-             tractsoft/doc-services     {:local/root "~/tract-manager/projects/doc-services"}
-             tractsoft/docusign         {:local/root "~/tract-manager/projects/docusign"}
-             tractsoft/proletariat      {:local/root "~/tract-manager/projects/proletariat"}
-             tractsoft/scheduler        {:local/root "~/tract-manager/projects/scheduler"}
-             tractsoft/schema-render    {:local/root "~/tract-manager/projects/schema-render"}
-             tractsoft/shared-db        {:local/root "~/tract-manager/projects/shared-db"}
-             tractsoft/web-ui           {:local/root "~/tract-manager/projects/web-ui"}
-             tractsoft/workflow         {:local/root "~/tract-manager/projects/workflow"}}}
+            {tractsoft/authenticate     {:local/root "/home/michael/tract-manager/projects/authenticate"}
+             tractsoft/authenticate-lib {:local/root "/home/michael/tract-manager/projects/authenticate-lib"}
+             tractsoft/beekeper         {:local/root "/home/michael/tract-manager/projects/beekeeper"}
+             tractsoft/communication    {:local/root "/home/michael/tract-manager/projects/communication"}
+             tractsoft/contract         {:local/root "/home/michael/tract-manager/projects/contract"}
+             tractsoft/customer-details {:local/root "/home/michael/tract-manager/projects/customer-details"}
+             tractsoft/doc-services     {:local/root "/home/michael/tract-manager/projects/doc-services"}
+             tractsoft/docusign         {:local/root "/home/michael/tract-manager/projects/docusign"}
+             tractsoft/proletariat      {:local/root "/home/michael/tract-manager/projects/proletariat"}
+             tractsoft/scheduler        {:local/root "/home/michael/tract-manager/projects/scheduler"}
+             tractsoft/schema-render    {:local/root "/home/michael/tract-manager/projects/schema-render"}
+             tractsoft/shared-db        {:local/root "/home/michael/tract-manager/projects/shared-db"}
+             tractsoft/web-ui           {:local/root "/home/michael/tract-manager/projects/web-ui"}
+             tractsoft/workflow         {:local/root "/home/michael/tract-manager/projects/workflow"}}}
+
+           :spy/scope-capture
+           {:extra-deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}}}
+
+           :inspect/portal {:extra-deps {djblue/portal {:mvn/version "0.11.2"}}}
 
            :inspect/rebl
            {:extra-deps {com.cognitect/rebl          {:mvn/version "0.9.242"}
