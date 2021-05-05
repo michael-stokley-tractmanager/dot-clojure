@@ -1,0 +1,89 @@
+;; The deps.edn file describes the information needed to build a classpath.
+;;
+;; When using the `clojure` or `clj` script, there are several deps.edn files
+;; that are combined:
+;; - install-level
+;; - user level (this file)
+;; - project level (current directory when invoked)
+;;
+;; For all attributes other than :paths, these config files are merged left to right.
+;; Only the last :paths is kept and others are dropped.
+
+{
+ ;; Paths
+ ;;   Directories in the current project to include in the classpath
+
+ ;; :paths ["src"]
+
+ ;; External dependencies
+
+ ;; :deps {
+ ;;   org.clojure/clojure {:mvn/version "1.10.1"}
+ ;; }
+
+ :deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}}
+
+ ;; Aliases
+ ;;   resolve-deps aliases (-R) affect dependency resolution, options:
+ ;;     :extra-deps - specifies extra deps to add to :deps
+ ;;     :override-deps - specifies a coordinate to use instead of that in :deps
+ ;;     :default-deps - specifies a coordinate to use for a lib if one isn't found
+ ;;   make-classpath aliases (-C) affect the classpath generation, options:
+ ;;     :extra-paths - vector of additional paths to add to the classpath
+ ;;     :classpath-overrides - map of lib to path that overrides the result of resolving deps
+
+ :aliases {;; new blank project template
+           :new {:extra-deps {com.github.seancorfield/clj-new
+                              {:mvn/version "1.1.293"}}
+                 :exec-fn clj-new/create
+                 :exec-args {:template "app"}}
+
+           ;; tractmanager
+           :tract-manager/cider-nrepl
+           {:extra-deps
+            {nrepl/nrepl                   {:mvn/version "0.8.3"}
+             refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}
+             cider/cider-nrepl             {:mvn/version "0.26.0"}}
+            :main-opts
+            ["-m"
+             "nrepl.cmdline"
+             "--middleware"
+             "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
+
+           :tract-manager/use-local-sources-during-development
+           {:override-deps
+            {tractsoft/authenticate     {:local/root "tract-manager/projects/authenticate"}
+             tractsoft/authenticate-lib {:local/root "tract-manager/projects/authenticate-lib"}
+             tractsoft/beekeper         {:local/root "tract-manager/projects/beekeeper"}
+             tractsoft/communication    {:local/root "tract-manager/projects/communication"}
+             tractsoft/contract         {:local/root "tract-manager/projects/contract"}
+             tractsoft/customer-details {:local/root "tract-manager/projects/customer-details"}
+             tractsoft/doc-services     {:local/root "tract-manager/projects/doc-services"}
+             tractsoft/docusign         {:local/root "tract-manager/projects/docusign"}
+             tractsoft/proletariat      {:local/root "tract-manager/projects/proletariat"}
+             tractsoft/scheduler        {:local/root "tract-manager/projects/scheduler"}
+             tractsoft/schema-render    {:local/root "tract-manager/projects/schema-render"}
+             tractsoft/shared-db        {:local/root "tract-manager/projects/shared-db"}
+             tractsoft/web-ui           {:local/root "tract-manager/projects/web-ui"}
+             tractsoft/workflow         {:local/root "tract-manager/projects/workflow"}}}
+
+           :inspect/rebl
+           {:extra-deps {com.cognitect/rebl          {:mvn/version "0.9.242"}
+                         org.clojure/core.async      {:mvn/version "1.3.618"}
+                         org.openjfx/javafx-fxml     {:mvn/version "11.0.1"}
+                         org.openjfx/javafx-controls {:mvn/version "11.0.1"}
+                         org.openjfx/javafx-swing    {:mvn/version "11.0.1"}
+                         org.openjfx/javafx-base     {:mvn/version "11.0.1"}
+                         org.openjfx/javafx-web      {:mvn/version "11.0.1"}
+                         org.clojure/data.csv        {:mvn/version "1.0.0"}
+                         org.clojure/data.json       {:mvn/version "2.2.2"}
+                         org.yaml/snakeyaml          {:mvn/version "1.28"}}
+            :jvm-opts ["-Dglass.gtk.uiScale=200%"]}}
+
+ ;; Provider attributes
+
+ ;; :mvn/repos {
+ ;;   "central" {:url "https://repo1.maven.org/maven2/"}
+ ;;   "clojars" {:url "https://repo.clojars.org/"}
+ ;; }
+ }
