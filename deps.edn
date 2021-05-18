@@ -42,6 +42,9 @@
              "--middleware"
              "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
 
+           :tract-manager/deps-missing-from-commons-deps-edn
+           {:extra-deps {metosin/malli #:mvn{:version "0.4.0"}}}
+
            :tract-manager/use-local-sources
            {:override-deps
             {tractsoft/authenticate     {:local/root "/home/michael/tract-manager/projects/authenticate"}
