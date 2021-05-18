@@ -64,7 +64,7 @@
              tractsoft/workflow         {:local/root "/home/michael/tract-manager/projects/workflow"}}}
 
            :spy/scope-capture
-           {:main-opts ["-e" "(require 'sc.api)"]
+           {#_#_:main-opts ["-e" "(require 'sc.api)"] ;; this breaks the repl launching
             :extra-deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}}}
 
            :inspect/portal {:extra-deps {djblue/portal {:mvn/version "0.11.2"}}}
