@@ -64,7 +64,8 @@
              tractsoft/workflow         {:local/root "/home/michael/tract-manager/projects/workflow"}}}
 
            :spy/scope-capture
-           {:extra-deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}}}
+           {:main-opts ["-e" "(require 'sc.api)"]
+            :extra-deps {vvvvalvalval/scope-capture  {:mvn/version "0.3.2"}}}
 
            :inspect/portal {:extra-deps {djblue/portal {:mvn/version "0.11.2"}}}
 
