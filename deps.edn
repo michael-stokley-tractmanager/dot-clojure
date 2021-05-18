@@ -50,6 +50,7 @@
             {tractsoft/authenticate     {:local/root "/home/michael/tract-manager/projects/authenticate"}
              tractsoft/authenticate-lib {:local/root "/home/michael/tract-manager/projects/authenticate-lib"}
              tractsoft/beekeper         {:local/root "/home/michael/tract-manager/projects/beekeeper"}
+             tractsoft/commons          {:local/root "/home/michael/tract-manager/projects/commons"}
              tractsoft/communication    {:local/root "/home/michael/tract-manager/projects/communication"}
              tractsoft/contract         {:local/root "/home/michael/tract-manager/projects/contract"}
              tractsoft/customer-details {:local/root "/home/michael/tract-manager/projects/customer-details"}
