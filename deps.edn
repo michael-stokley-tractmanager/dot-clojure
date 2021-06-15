@@ -45,6 +45,40 @@
            :tract-manager/deps-missing-from-commons-deps-edn
            {:extra-deps {metosin/malli #:mvn{:version "0.4.0"}}}
 
+           ;; SEE commons/project.clj
+           :tract-manager/patch-deps-edn
+           {:override-deps {com.fasterxml.jackson.core/jackson-core                   {:mvn/version "2.9.10"}
+                            com.fasterxml.jackson.core/jackson-databind               {:mvn/version "2.9.10.5"}
+                            com.fasterxml.jackson.core/jackson-annotations            {:mvn/version "2.9.10"}
+                            com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider   {:mvn/version "2.9.10"}
+                            com.fasterxml.jackson.dataformat/jackson-dataformat-cbor  {:mvn/version "2.9.10"}
+                            com.fasterxml.jackson.dataformat/jackson-dataformat-smile {:mvn/version "2.9.10"}
+                            buddy/buddy-core                                          {:mvn/version "1.6.0"}
+                            org.bouncycastle/bcpkix-jdk15on                           {:mvn/version "1.65"}
+                            org.bouncycastle/bcprov-jdk15on                           {:mvn/version "1.65"}
+                            com.google.protobuf/protobuf-java                         {:mvn/version "3.4.0"}
+                            ring/ring-core                                            {:mvn/version "1.8.0"}
+                            org.eclipse.jetty/jetty-server                            {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-servlet                           {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-alpn-server                       {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-client                            {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-xml                               {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-http                              {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-io                                {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-security                          {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty/jetty-util                              {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.http2/http2-server                      {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.http2/http2-common                      {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.http2/http2-hpack                       {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.websocket/websocket-api                 {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.websocket/websocket-client              {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.websocket/websocket-common              {:mvn/version "9.4.27.v20200227"}
+                            org.eclipse.jetty.websocket/websocket-servlet             {:mvn/version "9.4.27.v20200227"}
+                            com.cognitect.aws/api                                     {:mvn/version "0.8.505"}
+                            com.cognitect.aws/sqs                                     {:mvn/version "811.2.889.0"}
+                            com.cognitect.aws/endpoints                               {:mvn/version "1.1.11.1001"}
+                            danlentz/clj-uuid                                         {:mvn/version "0.1.9"}}}
+
            :tract-manager/use-local-sources
            {:override-deps
             {tractsoft/authenticate     {:local/root "/home/michael/tract-manager/projects/authenticate"}
